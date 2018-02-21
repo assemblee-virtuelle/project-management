@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://virtual-assembly.org/pair/project-management#"
+     xml:base="http://virtual-assembly.org/pair/project-management"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://virtual-assembly.org/pair/project-management">
+        <owl:imports rdf:resource="http://virtual-assembly.org/pair"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://virtual-assembly.org/pair#documentedBy -->
+
+    <rdf:Description rdf:about="http://virtual-assembly.org/pair#documentedBy">
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://virtual-assembly.org/pair#involvedIn -->
+
+    <rdf:Description rdf:about="http://virtual-assembly.org/pair#involvedIn">
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#WorkingGroup"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#assignedTo -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair/project-management#assignedTo">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair/project-management#hasTask"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#Task"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#PERSONALITY"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair/project-management#WorkingGroup"/>
+        <rdfs:label xml:lang="fr">assignée à</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#hasTask -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair/project-management#hasTask">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair/project-management#partOf"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#PERSONALITY"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#WorkingGroup"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair/project-management#Task"/>
+        <rdfs:label xml:lang="fr">a pour tâche</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#partOf -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair/project-management#partOf">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#Task"/>
+        <rdfs:label xml:lang="fr">concerne</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty"/>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#deadline -->
+
+    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair/project-management#deadline">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#priority -->
+
+    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair/project-management#priority">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#status -->
+
+    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair/project-management#status">
+        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#Task"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#ProjectManagement -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#Task -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/pair/project-management#Task">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#WorkingGroup -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/pair/project-management#WorkingGroup">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://virtual-assembly.org/pair/project-management#WorkingGroupType -->
+
+    <owl:Class rdf:about="http://virtual-assembly.org/pair/project-management#WorkingGroupType">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
