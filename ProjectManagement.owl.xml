@@ -1,18 +1,16 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://virtual-assembly.org/pair/project-management#"
-     xml:base="http://virtual-assembly.org/pair/project-management"
+<rdf:RDF xmlns="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#"
+     xml:base="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:wot="http://xmlns.com/wot/0.1/"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="http://virtual-assembly.org/pair/project-management">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9">
+        <owl:versionIRI rdf:resource="http://virtual-assembly.org/pair/project-management"/>
         <owl:imports rdf:resource="http://virtual-assembly.org/pair"/>
     </owl:Ontology>
     
@@ -29,61 +27,103 @@
     
 
 
-    <!-- http://virtual-assembly.org/pair#documentedBy -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#dependsOn -->
 
-    <rdf:Description rdf:about="http://virtual-assembly.org/pair#documentedBy">
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://virtual-assembly.org/pair#involvedIn -->
-
-    <rdf:Description rdf:about="http://virtual-assembly.org/pair#involvedIn">
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#WorkingGroup"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://virtual-assembly.org/pair/project-management#assignedTo -->
-
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair/project-management#assignedTo">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair/project-management#hasTask"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#Task"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#PERSONALITY"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/pair/project-management#WorkingGroup"/>
-        <rdfs:label xml:lang="fr">assignée à</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#dependsOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasDependency"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:label xml:lang="en">depends on the success of the task</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#hasTask -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasDependency -->
 
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair/project-management#hasTask">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://virtual-assembly.org/pair/project-management#partOf"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#PERSONALITY"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#WorkingGroup"/>
-        <rdfs:range rdf:resource="http://virtual-assembly.org/pair/project-management#Task"/>
-        <rdfs:label xml:lang="fr">a pour tâche</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasDependency">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:label xml:lang="en">from its success depends the other task</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#partOf -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasTask -->
 
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair/project-management#partOf">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#Task"/>
-        <rdfs:label xml:lang="fr">concerne</rdfs:label>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasTask">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#isAssignedTo"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:label xml:lang="en">has task</rdfs:label>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasWorkingGroup -->
 
-    <owl:ObjectProperty rdf:about="http://virtual-assembly.org/pair/project-management#projectManagement_ObjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasWorkingGroup">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#worksOn"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Project"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroup"/>
+        <rdfs:label xml:lang="en">has working group</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#isAssignedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#isAssignedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:label xml:lang="en">is assigned to personnality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#isForProject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#isForProject">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#needsTask"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Project"/>
+        <rdfs:label xml:lang="en">is for a project</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#needsTask -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#needsTask">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty"/>
+        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair#Project"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:label xml:lang="en">needs a task to be done</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty">
+        <rdfs:label xml:lang="en">abstract project management property</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#worksOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#worksOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#projectManagementObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroup"/>
+        <rdfs:range rdf:resource="http://virtual-assembly.org/pair#Project"/>
+        <rdfs:label xml:lang="en">works on project</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -98,33 +138,43 @@
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#ProjectManagementDatatypeProperty -->
 
-    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty"/>
-    
-
-
-    <!-- http://virtual-assembly.org/pair/project-management#deadline -->
-
-    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair/project-management#deadline">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#ProjectManagementDatatypeProperty">
+        <rdfs:label xml:lang="en">abstract project management datatype property</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#priority -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasDeadline -->
 
-    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair/project-management#priority">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasDeadline">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#ProjectManagementDatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:label xml:lang="en">deadline of the task</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#status -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasPriority -->
 
-    <owl:DatatypeProperty rdf:about="http://virtual-assembly.org/pair/project-management#status">
-        <rdfs:subPropertyOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement_objectProperty"/>
-        <rdfs:domain rdf:resource="http://virtual-assembly.org/pair/project-management#Task"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasPriority">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#ProjectManagementDatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:label xml:lang="en">priority level of the task</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasStatus">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#ProjectManagementDatatypeProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        <rdfs:label xml:lang="en">status of the task (e.g. -1=not started, 0=on going, 1=finished)</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -140,32 +190,112 @@
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#ProjectManagement -->
+    <!-- http://virtual-assembly.org/pair#Personality -->
 
-    <owl:Class rdf:about="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    <rdf:Description rdf:about="http://virtual-assembly.org/pair#Personality">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasTask"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#Task -->
+    <!-- http://virtual-assembly.org/pair#Project -->
 
-    <owl:Class rdf:about="http://virtual-assembly.org/pair/project-management#Task">
-        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    <rdf:Description rdf:about="http://virtual-assembly.org/pair#Project">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasWorkingGroup"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#needsTask"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#isAssignedTo"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#isForProject"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/pair#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasDeadline"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasPriority"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#hasStatus"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#short"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Task</rdfs:label>
+        <rdfs:label xml:lang="fr">Tâche</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#WorkingGroup -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroup -->
 
-    <owl:Class rdf:about="http://virtual-assembly.org/pair/project-management#WorkingGroup">
-        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroup">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair#Personality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/pair#hasType"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroupType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#worksOn"/>
+                <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/pair#Project"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Groupe de travail</rdfs:label>
+        <rdfs:label xml:lang="en">Working group</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://virtual-assembly.org/pair/project-management#WorkingGroupType -->
+    <!-- http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroupType -->
 
-    <owl:Class rdf:about="http://virtual-assembly.org/pair/project-management#WorkingGroupType">
-        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair/project-management#ProjectManagement"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroupType">
+        <rdfs:subClassOf rdf:resource="http://virtual-assembly.org/pair#WhoSubject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://virtual-assembly.org/pair#isTypeOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="fr">Type de groupe de travail</rdfs:label>
+        <rdfs:label xml:lang="en">Working group type</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
