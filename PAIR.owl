@@ -2146,7 +2146,6 @@
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://virtual-assembly.org/pair#DocumentType"/>
         <rdfs:label xml:lang="en">Document</rdfs:label>
         <rdfs:label xml:lang="fr">Document</rdfs:label>
     </owl:Class>
@@ -2428,7 +2427,6 @@
                 <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://virtual-assembly.org/pair#Person"/>
         <rdfs:comment xml:lang="fr">Organisation désigne un groupe d&apos;individus s&apos;étant rassemblés autour d&apos;un objectif commun. Une organisation peut être formelle (structure juridique) ou informelle (groupe).</rdfs:comment>
         <rdfs:label xml:lang="fr">Organisation</rdfs:label>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
@@ -2446,7 +2444,6 @@
                 <owl:allValuesFrom rdf:resource="http://virtual-assembly.org/pair#Organization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://virtual-assembly.org/pair#Personality"/>
         <rdfs:comment xml:lang="fr">Type d&apos;organisation permet de caractériser les organisations : Par exemple, Entreprise / SARL ou Association ...</rdfs:comment>
         <rdfs:label xml:lang="en">Organization Type</rdfs:label>
         <rdfs:label xml:lang="fr">Type d&apos;organisation</rdfs:label>

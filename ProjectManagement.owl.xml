@@ -290,6 +290,41 @@
         <rdfs:label xml:lang="fr">Type de groupe de travail</rdfs:label>
         <rdfs:label xml:lang="en">Working group type</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://virtual-assembly.org/pair#Document"/>
+            <rdf:Description rdf:about="http://virtual-assembly.org/pair#DocumentType"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#Task"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://virtual-assembly.org/pair#Organization"/>
+            <rdf:Description rdf:about="http://virtual-assembly.org/pair#Person"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroup"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://virtual-assembly.org/pair#OrganizationType"/>
+            <rdf:Description rdf:about="http://virtual-assembly.org/pair#Personality"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/tantet/ontologies/2018/1/untitled-ontology-9#WorkingGroupType"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
